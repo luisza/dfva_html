@@ -51,6 +51,11 @@ Agregue un botón
 
 En data **data-url** se enviará vía post la cédula de individuo que desea autenticarse.  Vea la documentación completa para saber cómo responder a las peticiones.
 
+Resultado.
+
+![Flujo autenticación](https://github.com/luisza/dfva_html/raw/master/pantallazos/Dialogo_autenticaci%C3%B3n.png)
+
+
 ## Firma
 
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
@@ -75,3 +80,6 @@ Agregue un botón
 
 Se realiza un POST a **data-url** pero sin parámetros, por lo que corresponde a la URL identificar el objeto que se desea firmar.  Vea la documentación completa para saber cómo responder a las apeticiones.
 
+Resultado
+
+![Flujo de firma](https://github.com/luisza/dfva_html/raw/master/pantallazos/Dialogo_firma.png)

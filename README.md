@@ -1,6 +1,6 @@
 # Cliente de administración de firma y autenticación para navegadores web
 
-## :warning: El código utilizado aquí pertenece al BCCR y solo recibe pequeñas modificaciones de forma, por lo que correponde a ellos decidir sobre su licencia.
+### :warning: El código utilizado aquí pertenece al BCCR y solo recibe pequeñas modificaciones de forma, por lo que correponde a ellos decidir sobre su licencia.
 
 Este cliente en javascript, permite mostrar los díalogos de autenticación y firma digital para cualquier plataforma web que desee soportar firma digital de Costa Rica.
 
@@ -12,6 +12,7 @@ Este cliente:
 * Puede combinarse con los clientes de DFVA que se están desarrollando.
 * Incluye su propia imágen por lo que no se ve afectado por otros frameworks de CSS.
 
+:warning: Este cliente se desarrolló usando ingeniería inversa del código del BCCR y se llegó a algunos supuestos que pueden ser no correctos, por lo que ruego disculpas si existe algún error.
 
 # Modo de uso
 

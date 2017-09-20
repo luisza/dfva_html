@@ -15,6 +15,8 @@ Este cliente:
 
 # Modo de uso
 
+ :exclamation: Es recomentable leer nuestra [wiki](https://github.com/luisza/dfva_html/wiki) donde se explica mejor el funcionamiento de este repositorio
+
 Para poder usarse primero asegurese que la carpeta **static** es servida por su servidor de contenido, depúes en el encabezado de la página la página donde desea usarla debe agregar lo siguiente.
 
 ```html

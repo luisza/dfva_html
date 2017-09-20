@@ -1,12 +1,23 @@
 # Cliente de administración de firma y autenticación para navegadores web
 
+## :warning: El código utilizado aquí pertenece al BCCR y solo recibe pequeñas modificaciones de forma, por lo que correponde a ellos decidir sobre su licencia.
+
 Este cliente en javascript, permite mostrar los díalogos de autenticación y firma digital para cualquier plataforma web que desee soportar firma digital de Costa Rica.
+
+Este cliente:
+
+* Incluye jquery 1.9.1.
+* Es independiente del lenguaje de la plataforma que lo utilice.
+* Utiliza JSON para comunicación.
+* Puede combinarse con los clientes de DFVA que se están desarrollando.
+* Incluye su propia imágen por lo que no se ve afectado por otros frameworks de CSS.
+
 
 # Modo de uso
 
 Para poder usarse primero asegurese que la carpeta **static** es servida por su servidor de contenido, depúes en el encabezado de la página la página donde desea usarla debe agregar lo siguiente.
 
-```
+```html
     <link href="/static/css/firma.css" rel="stylesheet" type="text/css" />
     <link href="/static/css/verificacion.css" rel="stylesheet" type="text/css" />
     <script src="/static/js/jquery-1.9.1.min.js"></script>
@@ -21,13 +32,13 @@ Para poder usarse primero asegurese que la carpeta **static** es servida por su 
 
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
 
-```
+```html
 <script src="/static/js/autenticador-1.0.0.js"></script>
 ```
 
 Agregue un botón 
 
-```
+```html
  <button id="BotonDeAutenticar"
  data-fva = "true" 
  data-url="/autenticar" 
@@ -44,13 +55,13 @@ En data **data-url** se enviará vía post la cédula de individuo que desea aut
 
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
 
-```
+```html
 <script src="/static/js/firma-verificacion-1.0.0.js"></script>
 ```
 
 Agregue un botón 
 
-```
+```html
 <div>
  <button id="BotonDeFirmar"
  data-fva = "true" 

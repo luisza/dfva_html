@@ -32,18 +32,18 @@
 			 }
 			 
 			 var laConfiguracion = {
-					 UrlParaSolicitar: btn.data('url'),
+					 UrlParaSolicitarLaFirma: btn.data('url'),
 		             DominioDelSitio: dominio,
 
 		             MensajeDeError:btn.data('mensajedeerror'),
 		             IdDelBotonDeFirmar: btn.attr('id'),
-		             images:{
-		            	 ayuda: ayuda,
-		            	 autenticador: img_autenticador,
-		            	 firma: img_firma
+		             Imagenes:{
+						 Ayuda: ayuda,
+		            	 Autenticador: img_autenticador,
+		            	 Firma: img_firma
 		             },
-		             urlconsultafirma: url_consulta_firma,
-		             urlcss: url_css,
+		             UrlConsultaFirma: url_consulta_firma,
+		             UrlCSS: url_css,
 		             FirmaRealizada: function(){
 		            	 btn.fadeOut();
 		            	 window.location=btn.data('successurl');

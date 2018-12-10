@@ -37,13 +37,13 @@
 		             ParaAutenticarse: btn.data('parautenticarse'),
 		             MensajeDeError:btn.data('mensajedeerror'),
 		             IdDelBotonDeAutenticar: btn.attr('id'),
-		             images:{
-		            	 ayuda: ayuda,
-		            	 autenticador: img_autenticador,
-		            	 firma: img_firma
+		             Imagenes:{
+		            	 Ayuda: ayuda,
+		            	 Autenticador: img_autenticador,
+		            	 Firma: img_firma
 		             },
-		             urlconsultafirma: url_consulta_firma,
-		             urlcss: url_css,
+		             UrlConsultaFirma: url_consulta_firma,
+					 UrlCSS: url_css,
 		             AutenticacionRealizada: function(){
 		            	 btn.fadeOut();
 		            	 window.location=btn.data('successurl');
@@ -61,3 +61,4 @@
 		 });
 	 });
 })($);
+

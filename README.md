@@ -22,7 +22,7 @@ Para poder usarse primero asegurese que la carpeta **static** es servida por su 
 
 ```html
     <script src="/static/js/jquery-1.9.1.min.js"></script>
-    <script src="/static/js/Bccr.Fva.ClienteInterno.Firmador-1.0.2.js" type="text/javascript"></script>
+    <script src="/static/js/Bccr.Fva.ClienteInterno.Firmador-1.0.3.js" type="text/javascript"></script>
 ```
 
 **Nota:** Puede cambiar las rutas según su conveniencia, solo asegúrese que los archivos son correctamente servidos.
@@ -34,7 +34,7 @@ Para poder usarse primero asegurese que la carpeta **static** es servida por su 
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
 
 ```html
-<script src="/static/js/autenticador-1.0.2.js"></script>
+<script src="/static/js/autenticador-1.0.3.js"></script>
 ```
 
 Agregue un botón 
@@ -62,7 +62,7 @@ Resultado.
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
 
 ```html
-<script src="/static/js/firma-verificacion-1.0.2.js"></script>
+<script src="/static/js/firma-verificacion-1.0.3.js"></script>
 ```
 
 Agregue un botón 

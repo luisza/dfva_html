@@ -1,4 +1,4 @@
-﻿"use strict";
+"use strict";
 
 var FvaClienteInterno = function (laConfiguracion) {
     this.AsigneElTextoALaVentana = AsigneElTextoALaVentana;
@@ -34,9 +34,9 @@ var FvaClienteInterno = function (laConfiguracion) {
     var laAdvertenciaAlUsuario = '<div class="fvaAdvertencia">El c&oacute;digo de verificaci&oacute;n es para su uso exclusivo y personal. No lo facilite por tel&eacute;fono o correo electr&oacute;nico a ninguna persona.</div>';
     var elResumenDelDocumento = $("<div>", { "class": "fvaResumen" });
 
-    var elIconoDeAyuda = $("<img>", { src: laConfiguracion.DominioDelSitio + '/Imagenes/Ayuda.png', alt: "Ayuda", height: "21", width: "21" });
+    var elIconoDeAyuda = $("<img>", { src: laConfiguracion.Imagenes.Ayuda, alt: "Ayuda", height: "21", width: "21" });
     var elContenidoDeTextoCopieElCodigo = $("<div>", { "class": "fvaContenidoDeTextoCopieElCodigo" });
-    var laUrlParaConsultarLaSolicitud = laConfiguracion.DominioDelSitio + "/Firmador/ConsulteLaFirma";
+    var laUrlParaConsultarLaSolicitud = laConfiguracion.UrlConsultaFirma;
     var elBotonDeCopiar = $("<input/>", { "class": "fvaElBotonDeCopiar", value: "Copiar", type: "button" });
 
     ConfigureElSitioParaRealizarSolicitudes();
@@ -58,7 +58,7 @@ var FvaClienteInterno = function (laConfiguracion) {
             laVentanaModal.append(elContenidoDelCuerpo);
 
             function AgregueElEstilo() {
-                $("head").append('<link rel="stylesheet" href="' + laConfiguracion.DominioDelSitio + '/Content/Bccr.Fva.ClienteInterno.Firmador-1.0.2.css" type="text/css" />');
+                $("head").append('<link rel="stylesheet" href="' + laConfiguracion.UrlCSS+'" type="text/css" />');
             }
         }
 
@@ -331,17 +331,21 @@ var FvaAutenticador = function (laConfiguracion) {
     }, laConfiguracion);
 
     var elBotonDeAutenticar = $("#" + laConfiguracion.IdDelBotonDeAutenticar);
-    var laImagenDelFirmador = $("<img>", { src: laConfiguracion.DominioDelSitio + '/Imagenes/Autenticador-v2.png', alt: "Imagen de ayuda del Autenticador" });
+    var laImagenDelFirmador = $("<img>", { src: laConfiguracion.Imagenes.Autenticador, alt: "Imagen de ayuda del Autenticador" });
 
     var laConfiguracionParaElClienteInterno = {
         TextoSolicitando: "Procesando su solicitud de autenticaci&oacute;n...",
         DominioDelSitio: laConfiguracion.DominioDelSitio,
         MensajeDeError: laConfiguracion.MensajeDeError,
         ImagenDelFirmador: laImagenDelFirmador,
+        ObtengaLosDatosParaSolicitarLaAutenticacion: laConfiguracion.ObtengaLosDatosParaSolicitarLaAutenticacion,
         DatosParaSolicitar: ObtengaLosDatosParaSolicitar,
-        SolicitudRealizada: window.AutenticacionRealizada,
-        SolicitudNoRealizada: window.AutenticacionNoRealizada,
-        UrlParaSolicitar: laConfiguracion.UrlParaSolicitarLaAutenticacion
+        SolicitudRealizada: laConfiguracion.AutenticacionRealizada,
+        SolicitudNoRealizada: laConfiguracion.AutenticacionNoRealizada,
+        UrlParaSolicitar: laConfiguracion.UrlParaSolicitarLaAutenticacion,
+        Imagenes: laConfiguracion.Imagenes,
+        UrlConsultaFirma: laConfiguracion.UrlConsultaFirma,
+        UrlCSS: laConfiguracion.UrlCSS
     }
 
     var elTextoTooltipParaIdentificacion = "<div class='fvaToolTipIdentificacionTitulo'>Formato de la identificaci&oacute;n</div><ul><li><span>Nacional:</span><span>00-0000-0000</span></li><li><span>DIDI:</span><span>500000000000</span></li><li><span>DIMEX:</span><span>100000000000</span></li></li>";
@@ -459,7 +463,7 @@ var FvaAutenticador = function (laConfiguracion) {
     }
 
     function ObtengaLosDatosParaSolicitar() {
-        var losDatos = window.ObtengaLosDatosParaSolicitarLaAutenticacion();
+        var losDatos = laConfiguracion.ObtengaLosDatosParaSolicitarLaAutenticacion();
         var laIdentificacion = laEntradaDeLaIdentificacion.val();
 
         if (losDatos === undefined) {
@@ -474,13 +478,13 @@ var FvaAutenticador = function (laConfiguracion) {
 var FvaFirmador = function (laConfiguracion) {
     laConfiguracion = $.extend({
         IdDelBotonDeFirmar: "BotonDeFirmar",
-        UrlParaSolicitarLaFirma: "",
+      //  UrlParaSolicitarLaFirma: "",
         DominioDelSitio: "",
         MensajeDeError: "Ocurri&oacute; un error al realizar la firma."
     }, laConfiguracion);
 
     var elBotonDeFirmar = $("#" + laConfiguracion.IdDelBotonDeFirmar);
-    var laImagenDelFirmador = $("<img>", { src: laConfiguracion.DominioDelSitio + '/Imagenes/Firmador-v2.png', alt: "Imagen de ayuda del Firmador" });
+    var laImagenDelFirmador = $("<img>", { src: laConfiguracion.Imagenes.Firma, alt: "Imagen de ayuda del Firmador" });
 
     var laConfiguracionParaElClienteInterno = {
         TextoSolicitando: "Procesando su solicitud de firma...",
@@ -488,9 +492,12 @@ var FvaFirmador = function (laConfiguracion) {
         MensajeDeError: laConfiguracion.MensajeDeError,
         ImagenDelFirmador: laImagenDelFirmador,
         DatosParaSolicitar: ObtengaLosDatosParaSolicitar,
-        SolicitudRealizada: window.FirmaRealizada,
-        SolicitudNoRealizada: window.FirmaNoRealizada,
-        UrlParaSolicitar: laConfiguracion.UrlParaSolicitarLaFirma
+        SolicitudRealizada: laConfiguracion.FirmaRealizada,
+        SolicitudNoRealizada: laConfiguracion.FirmaNoRealizada,
+        UrlParaSolicitar: laConfiguracion.UrlParaSolicitarLaFirma,
+        Imagenes: laConfiguracion.Imagenes,
+        UrlConsultaFirma: laConfiguracion.UrlConsultaFirma,
+        UrlCSS: laConfiguracion.UrlCSS
     }
 
     var elClienteInterno = new FvaClienteInterno(laConfiguracionParaElClienteInterno);
@@ -500,7 +507,7 @@ var FvaFirmador = function (laConfiguracion) {
     });
 
     function ObtengaLosDatosParaSolicitar() {
-        return window.ObtengaLosDatosParaSolicitarLaFirma();
+        return laConfiguracion.ObtengaLosDatosParaSolicitarLaFirma();
     }
 };
 

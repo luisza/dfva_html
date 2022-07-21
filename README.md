@@ -1,6 +1,6 @@
 # Cliente de administración de firma y autenticación para navegadores web
 
-### :warning: El código utilizado aquí pertenece al BCCR y solo recibe pequeñas modificaciones de forma, por lo que correponde a ellos decidir sobre su licencia.
+### :warning: El código aquí fue creado por el BCCR, y se realizó algunas adaptaciones menores, pero este repositorio es mantenido voluntariamente y no necesariamente está actualizado con las políticas del imagen.
 
 Este cliente en javascript, permite mostrar los díalogos de autenticación y firma digital para cualquier plataforma web que desee soportar firma digital de Costa Rica.
 
@@ -9,10 +9,10 @@ Este cliente:
 * Incluye jquery 1.9.1.
 * Es independiente del lenguaje de la plataforma que lo utilice.
 * Utiliza JSON para comunicación.
-* Puede combinarse con los clientes de DFVA que se están desarrollando.
+* Puede combinarse con aplicaciones web.
 * Incluye su propia imágen por lo que no se ve afectado por otros frameworks de CSS.
 
-:warning: Este cliente se desarrolló usando ingeniería inversa del código del BCCR y se llegó a algunos supuestos que pueden ser no correctos, por lo que ruego disculpas si existe algún error.
+
 
 # Modo de uso
 
@@ -22,7 +22,7 @@ Para poder usarse primero asegurese que la carpeta **static** es servida por su 
 
 ```html
     <script src="/static/js/jquery-1.9.1.min.js"></script>
-    <script src="/static/js/Bccr.Fva.ClienteInterno.Firmador-1.0.5-min.js" type="text/javascript"></script>
+    <script src="/static/js/Bccr.Fva.ClienteInterno.Firmador-1.0.6-min.js" type="text/javascript"></script>
 ```
 
 **Nota:** Puede cambiar las rutas según su conveniencia, solo asegúrese que los archivos son correctamente servidos.
@@ -34,7 +34,7 @@ Para poder usarse primero asegurese que la carpeta **static** es servida por su 
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
 
 ```html
-<script src="/static/js/autenticador-1.0.5-min.js"></script>
+<script src="/static/js/autenticador-1.0.6-min.js"></script>
 ```
 
 Agregue un botón 
@@ -62,7 +62,7 @@ Resultado.
 Agregue en el encabezado después de los enlaces agregados anteriormente lo siguiente:
 
 ```html
-<script src="/static/js/firma-verificacion-1.0.5-min.js"></script>
+<script src="/static/js/firma-verificacion-1.0.6-min.js"></script>
 ```
 
 Agregue un botón 

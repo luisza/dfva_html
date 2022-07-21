@@ -3,6 +3,7 @@
 		 var btns=$(document).find('[data-fva="true"]');
 		 $.each(btns, function(index, btn){
 			 btn=$(btn);
+			 var seDebeAutenticar = 'False';
 			 var dominio=btn.data('dominio');
 			 if(dominio==undefined){
 				 dominio=location.protocol+"//"+location.host;
@@ -18,39 +19,45 @@
 			 }
 			 var img_autenticador=btn.data('img_autenticador');
 			 if(img_autenticador==undefined){
-				img_autenticador = dominio+"/static/Imagenes/Autenticador-v2.png";
+				img_autenticador = dominio+"/static/Imagenes/Autenticador-v3.png";
 			 }
 			 var img_firma=btn.data('img_firma');
 			 if(img_firma==undefined){
-				 img_firma = dominio+"/static/Imagenes/Firmador-v2.png";
+				 img_firma = dominio+"/static/Imagenes/Firmador-v3.png";
 			 }
-			 
 			 var url_css=btn.data('urlcss');
 			 if(url_css==undefined){
-				 url_css=dominio + "/static/css/Bccr.Fva.ClienteInterno.Firmador-1.0.5.css";
+				 url_css=dominio + "/static/css/Bccr.Fva.ClienteInterno.Firmador-1.0.6.css";
 			 }
 			 
 			 var laConfiguracion = {
-					 UrlParaSolicitarLaFirma: btn.data('url'),
+		             UrlParaSolicitarLaAutenticacion: btn.data('url'),
+		             UrlParaSolicitar: btn.data('url'),
 		             DominioDelSitio: dominio,
-
+		             ParaAutenticarse: btn.data('parautenticarse'),
 		             MensajeDeError:btn.data('mensajedeerror'),
-		             IdDelBotonDeFirmar: btn.attr('id'),
+		             IdDelBotonDeAutenticar: btn.attr('id'),
 		             Imagenes:{
-						 Ayuda: ayuda,
+		            	 Ayuda: ayuda,
 		            	 Autenticador: img_autenticador,
 		            	 Firma: img_firma
 		             },
 		             UrlConsultaFirma: url_consulta_firma,
-		             UrlCSS: url_css,
-		             FirmaRealizada: function(){
+					 UrlCSS: url_css,
+		             AutenticacionRealizada: function(){
 		            	 btn.fadeOut();
 		            	 window.location=btn.data('successurl');
 		             },
-		             FirmaNoRealizada: function(){},
-		             ObtengaLosDatosParaSolicitarLaFirma: function(){}
+		             ObtengaLosDatosParaSolicitarLaAutenticacion: function(){},
+		             AutenticacionNoRealizada: function(){}
 		         };     
-			 FvaFirmador(laConfiguracion);     
+			 
+			 
+		     FvaAutenticador(laConfiguracion);
+		
+		     if (seDebeAutenticar=="True") {
+		    	 btn.trigger("click");
+		     }     
 		 });
 	 });
 })($);

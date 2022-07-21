@@ -29,8 +29,8 @@ var FvaClienteInterno = function (laConfiguracion) {
     var elCampoParaAccesibilidad = $("<div>", { class: "fvaElementoOculto" });
     var elCampoParaCopiar = $("<input/>", { class: "fvaElementoOculto" });
     var elMensajeDeCopiado = $("<div>", { class: "fvaMensajeDeCopiado" }).css({ display: "none" });
-    var elTextoDeCopieElCodigo = "Para confirmar la transacci&oacute;n, copie el siguiente c&oacute;digo de verificaci&oacute;n en el Firmador BCCR";
-    var elTextoDeAyudaQueEsFirmadorBccr = "&iquest;Qu&eacute; es el Firmador BCCR?";
+    var elTextoDeCopieElCodigo = "Para confirmar la transacci&oacute;n, seleccione el siguiente c&oacute;digo de verificaci&oacute;n en GAUDI";
+    var elTextoDeAyudaQueEsFirmadorBccr = "&iquest;Qu&eacute; es GAUDI?";
     var laDescripcionDelFormato = '<div class="fvaDescripcionDelFormato"><span class="fvaCodLetra">Letra</span><span class="fvaDescripcionDelFormatoSeparador"> | </span><span>N&uacute;mero</span></div>';
     var elTituloDelResumen = '<div class="fvaTituloDelResumen">Resumen de la transacci&oacute;n:</div>';
     var laAdvertenciaAlUsuario = '<div class="fvaAdvertencia">El c&oacute;digo de verificaci&oacute;n es para su uso exclusivo y personal. No lo facilite por tel&eacute;fono o correo electr&oacute;nico a ninguna persona.</div>';
@@ -253,7 +253,7 @@ var FvaClienteInterno = function (laConfiguracion) {
 
         function NotifiqueQueSeCompletoLaSolicitudConErrorInesperado() {
             var T = "<p>Estimado suscriptor, se presentó un problema a la hora de realizar este proceso.</p>";
-            var V = '<p class="fvaColorMensajeSecundario">Pasos a seguir:</p><ol><li>Verificar si el Firmador BCCR se encuentra en estado conectado.<div class="fvaIconoFirmadorConectado"></div></li><li>Intentar nuevamente.</li>';
+            var V = '<p class="fvaColorMensajeSecundario">Pasos a seguir:</p><ol><li>Verificar si el Agente GAUDI se encuentra en estado conectado.<div class="fvaIconoFirmadorConectado"></div></li><li>Intentar nuevamente.</li>';
             var S = '<p class="fvaContenidoParaErrorGeneralMensajeFinal">En caso de no corregirse, favor contactar al centro de soporte.</p>';
             var U = T + '<div class="fvaMargenDeContenido fvaColorMensajeSecundario fvaContenidoParaErrorGeneral">' + V + "</div>" + S;
             MuestreElBordeDeError();
@@ -350,9 +350,9 @@ var FvaAutenticador = function (laConfiguracion) {
     var elContenidoParaElMensaje = $("<div>", { class: "fvaMargenDeContenido" });
     var i = "https://ayudaenlinea.bccr.fi.cr/ucontent/6294cf05198d40b6aaaddca4447b4016_es-ES/sim/html/sim_auto_playback.htm";
     var elContenidoParaDelTipoDeIdentificacion = $("<div>", { class: "fvaContenidoParaTipoIdentificacion" });
-    var m = '<div class="fvaContenidoParaInformacionDeConectado"><div>Recuerde que para poder realizarla deber&aacute;:</div><ul><li>Insertar la tarjeta de firma digital en el lector o computadora.</li><li>El Firmador BCCR debe estar instalado y en estado conectado. <div class="fvaIconoFirmadorConectado"></div></li></ul><div>Cualquier consulta sobre el uso del Firmador BCCR, puede utilizar la gu&iacute;a <a href="' +
+    var m = '<div class="fvaContenidoParaInformacionDeConectado"><div>Recuerde que para poder realizarla deber&aacute;:</div><ul><li>Insertar la tarjeta de firma digital en el lector o computadora.</li><li>El Agente GAUDI debe estar instalado y en estado conectado. <div class="fvaIconoFirmadorConectado"></div></li></ul><div>Cualquier consulta sobre el uso de GAUDI, puede utilizar la gu&iacute;a <a href="' +
         i +
-        '" target="_blank">Uso del Firmador BCCR</a>.</div></div>';
+        '" target="_blank">Uso de GAUDI</a>.</div></div>';
     var elRadioBotonNacional = $("<div>", { class: "fvaRadioBoton" });
     var elRadioBotonExtranjero = $("<div>", { class: "fvaRadioBoton" });
     var elClienteInterno = new FvaClienteInterno(laConfiguracionParaElClienteInterno);

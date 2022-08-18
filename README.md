@@ -1,6 +1,6 @@
 # Cliente de administración de firma y autenticación para navegadores web
 
-### :warning: El código aquí fue creado por el BCCR, y se realizó algunas adaptaciones menores, pero este repositorio es mantenido voluntariamente y no necesariamente está actualizado con las políticas del imagen.
+### :warning: El código aquí fue creado por el BCCR, y se realizó algunas adaptaciones menores, pero este repositorio es mantenido voluntariamente y no necesariamente está actualizado con las políticas de imagen.
 
 Este cliente en javascript, permite mostrar los díalogos de autenticación y firma digital para cualquier plataforma web que desee soportar firma digital de Costa Rica.
 
@@ -13,10 +13,20 @@ Este cliente:
 * Incluye su propia imágen por lo que no se ve afectado por otros frameworks de CSS.
 
 
+# Enlaces de interés
+
+Los siguientes enlaces son de proyectos de interés relacionados con el desarrollo de firma digital.
+
+- Receptor de notificiaciones BCCR [Enlace](https://git.ucr.ac.cr/firma_comunidad/receptor-de-notificaciones-del-bccr)
+- Ventanas de Usuario [Enlace](https://git.ucr.ac.cr/firma_comunidad/ventanas_usuario)
+- Pyfva: Cliente para integración con Python  [Enlace](https://github.com/solvo/pyfva)
+- Firmador Libre, aplicación de escritorio [Enlace](https://firmador.libre.cr/)
+
+
 
 # Modo de uso
 
- :exclamation: Es recomentable leer nuestra [wiki](https://github.com/luisza/dfva_html/wiki) donde se explica mejor el funcionamiento de este repositorio
+ :exclamation: Es recomentable leer nuestra [wiki](https://git.ucr.ac.cr/firma_comunidad/ventanas_usuario/-/wikis/uso-aplicaciones) donde se explica mejor el funcionamiento de este repositorio
 
 Para poder usarse primero asegurese que la carpeta **static** es servida por su servidor de contenido, depúes en el encabezado de la página la página donde desea usarla debe agregar lo siguiente.
 
